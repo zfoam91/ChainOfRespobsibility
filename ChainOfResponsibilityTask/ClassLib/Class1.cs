@@ -69,7 +69,6 @@ public class FindEmail:IHandler{
         Regex rg = new Regex("\\S+@\\S+\\.\\S+");
         MatchCollection match = rg.Matches(data);
         string newdata = data;
-        Console.WriteLine($"{match.Count}");
         for(int i = 0; i< match.Count; i++){
             int ind = match[i].Value.IndexOf('@');
             newdata = Regex.Replace(newdata, match[i].Value, match[i].Value.Substring(ind));
